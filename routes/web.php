@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaydayLoanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('chwilowki', PaydayLoanController::class)->only([
+    'index', 'show'
+]);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
