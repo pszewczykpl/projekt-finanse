@@ -1,10 +1,10 @@
 {
-    "name": "laravel/laravel",
+    "name": "pszewczykpl/projekt-finanse",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Projekt Finanse to porównywarka produktów finansowych.",
     "keywords": [
-        "framework",
-        "laravel"
+        "projekt",
+        "finanse"
     ],
     "license": "MIT",
     "require": {
