@@ -14,7 +14,7 @@ class PaydayLoanController extends Controller
      */
     public function index()
     {
-        return view('paydayloans.index', ['name' => 'Victoria']);
+        return view('paydayloans.index', ['paydayloans' => PaydayLoan::all()]);
     }
 
     /**

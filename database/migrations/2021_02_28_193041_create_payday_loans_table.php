@@ -15,6 +15,21 @@ class CreatePaydayLoansTable extends Migration
     {
         Schema::create('payday_loans', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->string('logo');
+            $table->integer('votes');
+            $table->integer('rating');
+            $table->boolean('without_bik');
+            $table->boolean('payout_15m');
+            $table->boolean('first_free');
+            $table->boolean('confirmed');
+            $table->float('rrso', 8, 2);
+            $table->integer('amount_min');
+            $table->integer('amount_max');
+            $table->integer('term');
+            $table->text('url_application');
+            $table->text('url_www');
             $table->timestamps();
         });
     }
