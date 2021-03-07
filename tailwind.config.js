@@ -1,11 +1,14 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+
     purge: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
+    
+    darkMode: 'class',
 
     theme: {
         extend: {
@@ -18,8 +21,17 @@ module.exports = {
     variants: {
         extend: {
             opacity: ['disabled'],
+            textOpacity: ['dark'],
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
+
+    variants: {
+        extend: {
+        },
+    },
+    
 };
