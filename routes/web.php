@@ -16,7 +16,7 @@ use App\Http\Controllers\PaydayLoanController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::resource('chwilowki', PaydayLoanController::class)->only([
     'index', 'show'
