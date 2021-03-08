@@ -9,7 +9,7 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
                 <a href="{{ route('home') }}" class="{{ (request()->is('home')) ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">Strona główna</a>
-                <a href="{{ route('chwilowki.index') }}" class="{{ (request()->is('chwilowki')) ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">Chwilówki</a>
+                <a href="{{ route('paydayloans.index') }}" class="{{ (request()->is('paydayloans')) ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">Chwilówki</a>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="md:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Strona główna</a>
-        <a href="{{ route('chwilowki.index') }}" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Chwilówki</a>
+        <a href="{{ route('paydayloans.index') }}" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Chwilówki</a>
       </div>
     </div>
     

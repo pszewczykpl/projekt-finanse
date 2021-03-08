@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h3 class="font-semibold text-xl text-gray-800 leading-tight">
-            Porównywarka chwilówek
+            {{ $title }}
         </h3>
     </x-slot>
 
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
           @foreach($paydayloans as $paydayloan)
-          <div class="flex flex-wrap -mx-2 overflow-hidden shadow-md rounded border p-2 mb-5 items-center">
+          <div class="flex flex-wrap -mx-2 overflow-hidden shadow-md rounded border border-opacity-95 p-2 mb-5 items-center">
 
               
               <div class="my-2 px-2 w-full overflow-hidden md:w-5/6">
@@ -59,7 +59,7 @@
 
                   <div class="px-2 w-full flex flex-wrap overflow-hidden justify-center md:justify-start pt-1">
                     @if($paydayloan->without_bik)
-                      <div class="flex justify-center items-center font-medium py-1 px-2 bg-white rounded-full text-purple-700 bg-purple-100 border border-purple-200 mr-1">
+                      <div class="flex justify-center items-center font-medium py-1 px-2 mb-1 bg-white rounded-full text-purple-700 bg-purple-100 border border-purple-200 mr-1">
                         <div class="text-xs font-normal leading-none max-w-full flex-initial">
                             Bez BIK
                         </div>
@@ -67,7 +67,7 @@
                     @endif
         
                     @if($paydayloan->payout_15m)
-                      <div class="flex justify-center items-center font-medium py-1 px-2 bg-white rounded-full text-purple-700 bg-purple-100 border border-purple-200 mr-1">
+                      <div class="flex justify-center items-center font-medium py-1 px-2 mb-1 bg-white rounded-full text-purple-700 bg-purple-100 border border-purple-200 mr-1">
                         <div class="text-xs font-normal leading-none max-w-full flex-initial">
                             Wypłata w 15 minut
                         </div>
@@ -75,12 +75,20 @@
                     @endif
         
                     @if($paydayloan->first_free)
-                      <div class="flex justify-center items-center font-medium py-1 px-2 bg-white rounded-full text-purple-700 bg-purple-100 border border-purple-200 mr-1">
+                      <div class="flex justify-center items-center font-medium py-1 px-2 mb-1 bg-white rounded-full text-purple-700 bg-purple-100 border border-purple-200 mr-1">
                         <div class="text-xs font-normal leading-none max-w-full flex-initial">
                             Pierwsza darmowa
                         </div>
                       </div>
                     @endif
+
+                    <a href="{{ route('paydayloans.show', $paydayloan->id) }}">
+                      <div class="flex justify-center items-center font-medium py-1 px-2 mb-1 bg-white rounded-full text-gray-700 bg-gray-100 border border-gray-200 mr-1">
+                        <div class="text-xs font-normal leading-none max-w-full flex-initial">
+                            Pokaż więcej szczegółów
+                        </div>
+                      </div>
+                    </a>
 
                   </div>
                 

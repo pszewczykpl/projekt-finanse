@@ -14,7 +14,10 @@ class PaydayLoanController extends Controller
      */
     public function index()
     {
-        return view('paydayloans.index', ['paydayloans' => PaydayLoan::all()]);
+        return view('paydayloans.index', [
+            'title' => 'Ranking chwilówek',
+            'paydayloans' => PaydayLoan::all(),
+        ]);
     }
 
     /**
@@ -41,21 +44,24 @@ class PaydayLoanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PaydayLoan  $paydayLoan
+     * @param  \App\Models\PaydayLoan  $paydayloan
      * @return \Illuminate\Http\Response
      */
-    public function show(PaydayLoan $paydayLoan)
+    public function show(PaydayLoan $paydayloan)
     {
-        //
+        return view('paydayloans.show', [
+            'title' => 'Szczegóły chwilówki',
+            'paydayloan' => $paydayloan,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PaydayLoan  $paydayLoan
+     * @param  \App\Models\PaydayLoan  $paydayloan
      * @return \Illuminate\Http\Response
      */
-    public function edit(PaydayLoan $paydayLoan)
+    public function edit(PaydayLoan $paydayloan)
     {
         //
     }
@@ -64,10 +70,10 @@ class PaydayLoanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PaydayLoan  $paydayLoan
+     * @param  \App\Models\PaydayLoan  $paydayloan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PaydayLoan $paydayLoan)
+    public function update(Request $request, PaydayLoan $paydayloan)
     {
         //
     }
@@ -75,10 +81,10 @@ class PaydayLoanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PaydayLoan  $paydayLoan
+     * @param  \App\Models\PaydayLoan  $paydayloan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PaydayLoan $paydayLoan)
+    public function destroy(PaydayLoan $paydayloan)
     {
         //
     }
